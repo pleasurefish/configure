@@ -104,3 +104,9 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+
+set number
+"map the jk to <esc>, umap the <esc> ath the same time
+inoremap jk <esc>
+inoremap <esc> <nop>
