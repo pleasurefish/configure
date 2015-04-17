@@ -129,3 +129,17 @@ set statusline+=%=                  "切换到右侧
 set statusline+=[%F]%y%r%m%*
 set laststatus=2 " always show the status line
 let Tlist_Auto_Open = 1
+
+"select the word and delete it
+inoremap <c-d> <esc>ddi
+"set the leader key to ,
+",d means delete current line in nomorl mode.
+let mapleader = ","
+nnoremap <leader>d dd
+
+"quickly edit the environment in ~/.vimrc
+noremap <leader>ev :split $MYVIMRC<cr>
+"quickly valid the environment in ~/.vimrc
+noremap <leader>sv :source $MYVIMRC<cr>
+"add by rainfly 20150126
+echo ">^.^<"
