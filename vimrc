@@ -110,3 +110,22 @@ set number
 "map the jk to <esc>, umap the <esc> ath the same time
 inoremap jk <esc>
 inoremap <esc> <nop>
+
+"set tab width equals to 4
+set expandtab
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+let Tlist_Show_One_File = 1 "taglist插件只显示当前文件的tag
+let Tlist_Use_Right_Window = 1 "让taglist窗口显示在右边，默认在左边
+let Tlist_Exit_OnlyWindow = 1 "退出vim时候退出taglist
+"set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
+set statusline=[%p%%]               "当前百分比
+set statusline+=[Column:%3c]        "列号
+set statusline+=[Line:%04l/%04L]
+set statusline+=%=                  "切换到右侧
+set statusline+=[%F]%y%r%m%*
+set laststatus=2 " always show the status line
+let Tlist_Auto_Open = 1
