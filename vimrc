@@ -9,6 +9,16 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+"=======================================================
+"Rainfly add 20141226
+"set runtimepath
+let $VIMRUNTIME="$HOME/usr/vim/vim74/share/vim/vim74"
+"/home/jiyu.yang/local/vim/vim74"
+set runtimepath=$HOME/usr/vim/vim74/share/vim/vim74
+"/home/jiyu.yang/local/vim/vim74
+"Rainfly add 20141226
+"=======================================================
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
