@@ -1,0 +1,131 @@
+# .bashrc_aml
+
+# User specific aliases and functions
+com=$ANDROID_BUILD_TOP/common
+dis=$ANDROID_BUILD_TOP/common/drivers/${__VENDOR__}/display/ge2d
+hcam=$ANDROID_BUILD_TOP/hardware/${__VENDOR__}/camera
+mali=$ANDROID_BUILD_TOP/hardware/arm/gpu/mali
+gc=$ANDROID_BUILD_TOP/hardware/${__VENDOR__}/goldfish/camera
+gr=$ANDROID_BUILD_TOP/hardware/${__VENDOR__}/gralloc
+dcam=$ANDROID_BUILD_TOP/common/drivers/${__VENDOR__}/camera
+amp=$ANDROID_BUILD_TOP/common/drivers/${__VENDOR__}/amports
+v11=$ANDROID_BUILD_TOP/common/drivers/${__VENDOR__}/video_dev
+mipi=$ANDROID_BUILD_TOP/hardware/tvin/csi
+soc=$ANDROID_BUILD_TOP/common/drivers/media/platform/soc_camera
+tvin=$ANDROID_BUILD_TOP/hardware/tvin
+dts=$ANDROID_BUILD_TOP/common/arch/arm/boot/dts/${__VENDOR__}
+top=$ANDROID_BUILD_TOP
+obj=$ANDROID_BUILD_TOP/out/target/product/$TARGET_PRODUCT/obj/
+ohw=$ANDROID_BUILD_TOP/out/target/product/$TARGET_PRODUCT/symbols/system/lib/hw
+udis=$ANDROID_BUILD_TOP/uboot/arch/arm/cpu/aml_meson/m8
+dobj=$ANDROID_BUILD_TOP/device/${__VENDOR__}/$TARGET_PRODUCT
+omx=$ANDROID_BUILD_TOP/hardware/${__VENDOR__}/omx
+ext=$ANDROID_BUILD_TOP/external
+ti=$ANDROID_BUILD_TOP/../ti_hal
+cs=$ANDROID_BUILD_TOP/frameworks/av/services/camera/libcameraservice
+wfd=$ANDROID_BUILD_TOP/frameworks/av/media/libstagefright/wifi-display
+sf=$ANDROID_BUILD_TOP/frameworks/av/cmds/stagefright
+lsf=$ANDROID_BUILD_TOP/frameworks/av/media/libstagefright
+function  gs
+{
+    KEYWORD=$1
+    grep -rn "${KEYWORD}" * 2>/dev/null
+}
+function  ssource
+{
+        source $HOME/.bashrc
+}
+
+function  pp
+{
+
+        echo "com=$com\n"
+        echo ""
+
+        echo "dis=$dis"
+        echo ""
+        
+        echo "hcam=$hcam"
+        echo ""
+
+        echo "mali=$mali"
+        echo ""
+
+        echo "gr=$gr"
+        echo ""
+
+        echo "gc=$gc"
+        echo ""
+
+        echo "dcam=$dcam"
+        echo ""
+
+        echo "v11=$v11"
+        echo ""
+
+        echo "dts=$dts"
+        echo ""
+ 
+        echo "mipi=$mipi"
+        echo ""
+ 
+        echo "top=$top"
+        echo ""
+
+        echo "obj=$obj"
+        echo ""
+
+        echo "ohw=$ohw"
+        echo ""
+
+        echo "udis=$udis"
+        echo ""
+
+        echo "dobj=$dobj"
+        echo ""
+
+        echo "kaddr= arm-none-linux-gnueabi-addr2line  --exe=$obj/vmlinux pc_lr"
+        echo ""
+
+        echo "tasm= arm-linux-gnueabihf-objdump -d  xxx"
+        echo ""
+
+        echo "omx=$omx"
+        echo ""
+
+        echo "ti=$ti"
+        echo ""
+
+        echo "cs=$cs"
+        echo ""
+
+        echo "soc=$soc"
+        echo ""
+
+        echo "tvin=$tvin"
+        echo ""
+
+        echo "wfd=$wfd"
+        echo ""
+
+        echo "sf=$sf"
+        echo ""
+
+        echo "lsf=$lsf"
+        echo ""
+
+        echo "ext=$ext"
+        echo ""
+
+}
+#update alias 'source /home/jiyu.yang/.bashrc'
+
+function  kaddr
+{
+        arm-none-linux-gnueabi-addr2line  --exe=$obj/KERNEL_OBJ/vmlinux $1
+}
+
+function  tasm
+{
+    arm-linux-gnueabihf-objdump -D -S  $1 
+}
