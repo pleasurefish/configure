@@ -59,3 +59,13 @@ alias busy="cat /dev/urandom | hexdump -C | grep \"ca\ fe\""
 #export PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$"
 #PS=prompt sign
 export PS1="${debian_chroot:+($debian_chroot)}\T -- \u@\h:\W\$"
+
+#add vim74 in the PATH
+if [ -d ${HOME}/usr/vim/vim74/bin ]; then
+    PATH=${HOME}/usr/vim/vim74/bin:$PATH
+fi
+#add ${HOME}/bin to PATH
+if [ -d ${HOME}/bin ]; then
+    PATH=${HOME}/bin:$PATH
+fi
+export PATH
