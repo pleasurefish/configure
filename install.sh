@@ -26,6 +26,16 @@ installto ()
     done
 }
 
+lftp_alias ()
+{
+    if [ -f $HOME/.lftp/bookmarks ];then
+        echo " $HOME/.lftp/bookmarks already exits"
+    else
+        ln -s other/lftp-bookmarks $HOME/.lftp/bookmarks
+    fi
+
+}
+
 # install teh configure file 
 PWD=`pwd`
 installto ${PWD}/cfg ${HOME} .

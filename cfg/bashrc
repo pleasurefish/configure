@@ -72,9 +72,11 @@ alias l='ls -CF'
 #fi
 
 if [ -e ${HOME}/.bashrc_vendor ]; then
+    echo "bash vendor"
     . ${HOME}/.bashrc_vendor
 fi
 
 if [ -e ${HOME}/.bashrc_rainfly ]; then
+    echo "bash rainfly"
     . ${HOME}/.bashrc_rainfly
 fi

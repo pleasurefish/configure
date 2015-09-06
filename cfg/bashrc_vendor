@@ -15,7 +15,7 @@ soc=$ANDROID_BUILD_TOP/common/drivers/media/platform/soc_camera
 tvin=$ANDROID_BUILD_TOP/hardware/tvin
 dts=$ANDROID_BUILD_TOP/common/arch/arm/boot/dts/${__VENDOR__}
 top=$ANDROID_BUILD_TOP
-obj=$ANDROID_BUILD_TOP/out/target/product/$TARGET_PRODUCT/obj/
+obj=$ANDROID_BUILD_TOP/out/target/product/$TARGET_PRODUCT/obj
 ohw=$ANDROID_BUILD_TOP/out/target/product/$TARGET_PRODUCT/symbols/system/lib/hw
 udis=$ANDROID_BUILD_TOP/uboot/arch/arm/cpu/aml_meson/m8
 dobj=$ANDROID_BUILD_TOP/device/${__VENDOR__}/$TARGET_PRODUCT
@@ -84,10 +84,10 @@ function  pp
         echo "dobj=$dobj"
         echo ""
 
-        echo "kaddr= arm-none-linux-gnueabi-addr2line  --exe=$obj/vmlinux pc_lr"
+        echo "kaddr= aarch64-linux-gnu-addr2line  --exe=$obj/vmlinux pc_lr"
         echo ""
 
-        echo "tasm= arm-linux-gnueabihf-objdump -d  xxx"
+        echo "tasm= aarch64-linux-gnu-objdump -d  xxx"
         echo ""
 
         echo "omx=$omx"
@@ -122,10 +122,10 @@ function  pp
 
 function  kaddr
 {
-        arm-none-linux-gnueabi-addr2line  --exe=$obj/KERNEL_OBJ/vmlinux $1
+    aarch64-linux-gnu-addr2line  --exe=$obj/KERNEL_OBJ/vmlinux $1
 }
 
 function  tasm
 {
-    arm-linux-gnueabihf-objdump -D -S  $1 
+    aarch64-linux-gnu-objdump -D -S  $1 
 }
