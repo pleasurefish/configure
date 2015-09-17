@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "bash login"
+
+__VENDOR__=amlogic
+export __VENDOR__
+if [ -e ${HOME}/.bashrc ]; then
+    . ${HOME}/.bashrc
+fi
