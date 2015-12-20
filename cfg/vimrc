@@ -109,7 +109,7 @@ endif
 set number
 "map the jk to <esc>, umap the <esc> ath the same time
 inoremap jk <esc>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
 
 "set tab width equals to 4
 set expandtab
@@ -142,4 +142,8 @@ noremap <leader>ev :split $MYVIMRC<cr>
 "quickly valid the environment in ~/.vimrc
 noremap <leader>sv :source $MYVIMRC<cr>
 "add by rainfly 20150126
+
+"add by rainfly 20151112
+set cc=80
+set tw=78 fo+=Mm
 echo ">^.^<"

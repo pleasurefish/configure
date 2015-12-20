@@ -80,3 +80,8 @@ if [ -e ${HOME}/.bashrc_rainfly ]; then
     echo "bash rainfly"
     . ${HOME}/.bashrc_rainfly
 fi
+
+if [ -e ${HOME}/.bashrc_buildroot ]; then
+    echo "bash buildroot"
+    . ${HOME}/.bashrc_buildroot
+fi
